@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class  Numbers {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String line = scan.nextLine();
+        double num = 0;
+        String[] arr = line.split(" ");
+        for (String s : arr) {
+            num += s.length();
+        }
+        if (arr.length > 0) num /= arr.length;
+        System.out.printf("Средняя длина чисел: %.2f", num);
+        System.out.println("\nЧисла с длиной больше среднего:");
+        for (String s : arr) {
+            if (s.length() > num) System.out.println(s + " Длина: " + s.length());
+        }
+        System.out.println("Числа с длиной меньше среднего:");
+        for (String s : arr) {
+            if (s.length() < num) System.out.println(s + " Длина: " + s.length());
+        }
+    }
+}
